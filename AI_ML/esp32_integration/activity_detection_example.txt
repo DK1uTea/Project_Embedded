@@ -1,0 +1,32 @@
+
+// Example of using the activity detection function
+void displayActivity(int activity) {
+  switch(activity) {
+    case 0: Serial.println("downSit"); break;
+    case 1: Serial.println("freeFall"); break;
+    case 2: Serial.println("runFall"); break;
+    case 3: Serial.println("runSit"); break;
+    case 4: Serial.println("walkFall"); break;
+    case 5: Serial.println("walkSit"); break;
+    default: Serial.println("Unknown activity");
+  }
+}
+
+void loop() {
+  // ... existing code to read sensors and extract features ...
+  
+  // Detect activity
+  int activity = detect_activity(features);
+  
+  // Display the detected activity
+  Serial.print("Detected activity: ");
+  displayActivity(activity);
+  
+  // Also check if it's a fall
+  if (detect_fall(features)) {
+    Serial.println("FALL DETECTED!");
+    // ... handle fall detection ...
+  }
+  
+  delay(1000);  // Adjust as needed
+}

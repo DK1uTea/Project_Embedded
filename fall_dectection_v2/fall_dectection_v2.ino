@@ -9,7 +9,7 @@
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
 #include <WiFi.h>
-#include <BlynkSimpleEsp32.h>  // Include Blynk library after defining template ID and name
+
 
 // ==== BLYNK CONFIGURATION ====
 char auth[] = BLYNK_AUTH_TOKEN;        // Blynk Auth Token
@@ -18,7 +18,7 @@ char pass[] = "trangckun";             // Mật khẩu WiFi
 
 // ==== MPU6050 CONFIGURATION ====
 Adafruit_MPU6050 mpu;
-
+#include <BlynkSimpleEsp32.h>  // Include Blynk library after defining template ID and name
 // Ngưỡng phát hiện té ngã - ĐÃ GIẢM ĐỂ KIỂM TRA DỄ HƠN
 const float GRAVITY = 9.81;           // Gia tốc trọng trường
 const float fallThreshold = 15.0;  // Giảm từ 2.0 xuống 1.2 m/s^2
