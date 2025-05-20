@@ -532,10 +532,10 @@ void loop() {
         print(f"Saved activity detection example to {example_path}")
 
 if __name__ == "__main__":
-    # Define activities to exclude
-    exclude_activities = ['walkFall']  # Loại bỏ walkFall
+    # Không loại bỏ walkFall
+    exclude_activities = None  # <-- Sửa dòng này
     
-    # Load feature dataset, excluding specified activities
+    # Load feature dataset, giữ lại tất cả activity
     feature_data = load_feature_dataset(exclude_activities=exclude_activities)
     
     # Decide which classification to use: 'ActivityType' for multi-class or 'IsFall' for binary
