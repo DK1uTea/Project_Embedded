@@ -30,6 +30,9 @@ const unsigned long reconnectInterval = 30000; // 30 giây giữa các lần th�
 // Virtual pin để gửi thông báo
 #define VPIN_FALL_DETECTION V0
 #define VPIN_SYSTEM_STATUS V1
+#define VPIN_ACCEL_TOTAL V3
+#define VPIN_GYRO_TOTAL  V4
+#define VPIN_FALL_DETAIL V5
 
 // ==== MPU6050 CONFIGURATION ====
 Adafruit_MPU6050 mpu;
@@ -172,6 +175,9 @@ void loop() {
   // Tính sự thay đổi gia tốc (loại bỏ trọng lực)
   float accelerationChange = abs(totalAcceleration - GRAVITY);
 
+  Blynk.virtualWrite(VPIN_ACCEL_TOTAL, totalAcceleration);
+  Blynk.virtualWrite(VPIN_GYRO_TOTAL, totalGyro);
+
   // Cập nhật giá trị tối đa
   if (totalAcceleration > maxAcceleration) maxAcceleration = totalAcceleration;
   if (totalGyro > maxGyro) maxGyro = totalGyro;
@@ -246,8 +252,21 @@ void loop() {
 
       Blynk.virtualWrite(VPIN_FALL_DETECTION, "⚠️ TÉ NGÃ ĐƯỢC PHÁT HIỆN!");
       Blynk.logEvent("fall", eventMsg);
-
       Serial.println("✅ Đã gửi thông báo đến Blynk: " + eventMsg);
+
+      // --- Ghi nhận chi tiết vào Terminal/Label widget ---
+      String detailMsg = 
+        "Té ngã #" + eventID + " [" + timestamp + "s]\n"
+        "Accel: X=" + String(accel.acceleration.x,2) +
+        " Y=" + String(accel.acceleration.y,2) +
+        " Z=" + String(accel.acceleration.z,2) + "\n"
+        "Gyro: X=" + String(gyro.gyro.x,2) +
+        " Y=" + String(gyro.gyro.y,2) +
+        " Z=" + String(gyro.gyro.z,2) + "\n"
+        "A|G=" + String(accelerationChange,1) + "|" + String(totalGyro,1);
+
+      Blynk.virtualWrite(VPIN_FALL_DETAIL, detailMsg); // V5, dùng cho Terminal/Label widget
+      Serial.println("✅ Đã ghi nhật ký chi tiết té ngã: " + detailMsg);
     } else {
       Serial.println("❌ Không thể gửi thông báo (Blynk chưa kết nối)");
     }
