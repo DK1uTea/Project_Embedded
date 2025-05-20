@@ -11,18 +11,34 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 from sklearn.pipeline import Pipeline
 from tqdm import tqdm
 
-def load_feature_dataset(file_path='d:/Downloads/AI_ML/data/features/extracted_features.csv'):
+def load_feature_dataset(file_path='d:/Downloads/AI_ML/data/features/extracted_features.csv', 
+                        exclude_activities=None):
     """
-    Load the feature dataset
+    Load the feature dataset and optionally exclude specific activities
     
     Args:
         file_path: Path to the feature dataset CSV file
+        exclude_activities: List of activity types to exclude (e.g. ['walkFall'])
     
     Returns:
-        DataFrame with features
+        DataFrame with features, excluding specified activities
     """
     print(f"Loading feature dataset from {file_path}")
-    return pd.read_csv(file_path)
+    df = pd.read_csv(file_path)
+    
+    if exclude_activities:
+        original_count = len(df)
+        df = df[~df['ActivityType'].isin(exclude_activities)]
+        excluded_count = original_count - len(df)
+        print(f"Excluded {excluded_count} samples of {exclude_activities}")
+        
+        # Show remaining activity distribution
+        activity_counts = df['ActivityType'].value_counts()
+        print("\nRemaining activity distribution:")
+        for activity, count in activity_counts.items():
+            print(f"  {activity}: {count} samples")
+    
+    return df
 
 def prepare_data(df, test_size=0.2, target_column='ActivityType'):
     """
@@ -516,8 +532,11 @@ void loop() {
         print(f"Saved activity detection example to {example_path}")
 
 if __name__ == "__main__":
-    # Load feature dataset
-    feature_data = load_feature_dataset()
+    # Define activities to exclude
+    exclude_activities = ['walkFall']  # Loại bỏ walkFall
+    
+    # Load feature dataset, excluding specified activities
+    feature_data = load_feature_dataset(exclude_activities=exclude_activities)
     
     # Decide which classification to use: 'ActivityType' for multi-class or 'IsFall' for binary
     target_column = 'ActivityType'  # Change to 'IsFall' for binary classification

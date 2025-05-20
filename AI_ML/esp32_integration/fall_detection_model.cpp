@@ -8,8 +8,7 @@
 // 1: freeFall
 // 2: runFall
 // 3: runSit
-// 4: walkFall
-// 5: walkSit
+// 4: walkSit
 
 
 void extract_features(float accel_x[], float accel_y[], float accel_z[], 
@@ -90,249 +89,215 @@ void extract_features(float accel_x[], float accel_y[], float accel_z[],
 
 
 int tree_0(float features[]) {
-if (features[4] <= -0.068496f) {
-  if (features[84] <= 0.128901f) {
-    if (features[16] <= 0.306931f) {
-      if (features[58] <= -0.385997f) {
-        return 4;
-      } else {
-        if (features[64] <= -0.067044f) {
-          return 4;
-        } else {
-          if (features[28] <= -0.358184f) {
-            return 1;
-          } else {
-            if (features[20] <= 0.289083f) {
-              return 5;
+if (features[4] <= -0.290791f) {
+  if (features[84] <= -0.440984f) {
+    if (features[49] <= -0.383311f) {
+      return 4;
+    } else {
+      if (features[58] <= -0.520582f) {
+        if (features[94] <= -0.355420f) {
+          if (features[73] <= -0.258749f) {
+            if (features[22] <= -0.520858f) {
+              return 2;
             } else {
-              return 4;
+              if (features[10] <= 0.314283f) {
+                if (features[93] <= -0.152328f) {
+                  return 0;  // Safety check: Index out of bounds
+                } else {
+                  return 0;  // Safety check: Index out of bounds
+                }
+              } else {
+                return 0;
+              }
+            }
+          } else {
+            if (features[31] <= -0.428465f) {
+              return 1;
+            } else {
+              return 2;
             }
           }
+        } else {
+          if (features[15] <= -0.653438f) {
+            return 2;
+          } else {
+            return 0;
+          }
         }
+      } else {
+        return 2;
       }
-    } else {
-      return 4;
     }
   } else {
-    if (features[33] <= -1.479882f) {
+    if (features[11] <= -0.561817f) {
       return 1;
     } else {
-      return 4;
+      return 2;
     }
   }
 } else {
-  if (features[2] <= 0.497363f) {
-    if (features[26] <= 0.130526f) {
-      if (features[19] <= -0.522012f) {
-        return 4;
+  if (features[2] <= 0.707306f) {
+    if (features[31] <= -1.146153f) {
+      if (features[91] <= -0.536444f) {
+        return 1;
       } else {
-        if (features[19] <= -0.436631f) {
+        return 1;
+      }
+    } else {
+      return 0;
+    }
+  } else {
+    if (features[88] <= 1.168189f) {
+      if (features[51] <= 0.218257f) {
+        return 0;
+      } else {
+        if (features[66] <= -0.246244f) {
           return 1;
         } else {
-          return 0;
+          return 4;
         }
       }
     } else {
-      if (features[51] <= -0.660711f) {
-        return 2;
-      } else {
-        return 0;
-      }
-    }
-  } else {
-    if (features[83] <= -0.636852f) {
       return 4;
-    } else {
-      return 1;
     }
   }
 }
 }
 
 int tree_1(float features[]) {
-if (features[31] <= 0.086712f) {
-  if (features[5] <= -0.549491f) {
-    if (features[92] <= -0.428181f) {
-      return 1;
-    } else {
-      return 2;
-    }
-  } else {
-    if (features[34] <= 0.715084f) {
-      if (features[45] <= -0.472564f) {
-        if (features[2] <= -0.043532f) {
-          if (features[62] <= -0.338661f) {
-            return 2;
-          } else {
-            if (features[86] <= -0.001097f) {
-              return 2;
-            } else {
-              if (features[23] <= 0.586740f) {
-                return 1;
-              } else {
-                if (features[22] <= -0.366980f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              }
-            }
-          }
-        } else {
-          if (features[29] <= -0.496700f) {
-            return 4;
-          } else {
-            if (features[66] <= -0.308580f) {
-              if (features[67] <= -0.074126f) {
-                return 4;
-              } else {
-                return 1;
-              }
-            } else {
-              if (features[58] <= -0.521695f) {
-                if (features[21] <= -0.433023f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              } else {
-                if (features[39] <= -0.285961f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              }
-            }
-          }
-        }
-      } else {
-        return 0;
-      }
-    } else {
-      if (features[42] <= -0.426508f) {
-        if (features[66] <= -0.273484f) {
+if (features[75] <= -0.068486f) {
+  if (features[5] <= -0.423154f) {
+    if (features[92] <= -0.412826f) {
+      if (features[37] <= -0.203994f) {
+        if (features[30] <= 0.583861f) {
           return 4;
         } else {
-          return 0;
+          if (features[65] <= -0.340614f) {
+            return 0;
+          } else {
+            return 4;
+          }
         }
       } else {
-        return 0;
-      }
-    }
-  }
-} else {
-  if (features[8] <= -0.408175f) {
-    if (features[28] <= 0.143096f) {
-      if (features[1] <= -0.457904f) {
-        return 4;
-      } else {
-        if (features[78] <= 0.011519f) {
-          if (features[47] <= -0.236300f) {
-            if (features[24] <= -0.352803f) {
-              if (features[23] <= -0.003422f) {
-                if (features[63] <= -0.047573f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              } else {
-                return 1;
-              }
-            } else {
-              if (features[12] <= 0.131612f) {
-                if (features[53] <= -0.238338f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              } else {
-                if (features[0] <= 0.702192f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              }
-            }
+        if (features[2] <= 0.080118f) {
+          return 4;
+        } else {
+          if (features[47] <= -0.341318f) {
+            return 0;
           } else {
-            if (features[41] <= -0.545306f) {
-              if (features[74] <= -0.169132f) {
-                return 4;
-              } else {
+            return 4;
+          }
+        }
+      }
+    } else {
+      return 0;
+    }
+  } else {
+    if (features[34] <= 0.207870f) {
+      if (features[63] <= -0.054724f) {
+        if (features[77] <= 0.561045f) {
+          if (features[93] <= -0.413110f) {
+            return 4;
+          } else {
+            if (features[72] <= -0.412388f) {
+              if (features[32] <= -0.013626f) {
                 return 1;
+              } else {
+                return 2;
               }
             } else {
               return 4;
             }
           }
         } else {
-          if (features[43] <= -0.604245f) {
-            return 4;
-          } else {
-            return 0;
-          }
-        }
-      }
-    } else {
-      if (features[32] <= -0.322861f) {
-        if (features[23] <= 0.548078f) {
-          return 0;
-        } else {
           return 0;
         }
       } else {
-        if (features[4] <= -0.590470f) {
-          return 4;
-        } else {
-          if (features[81] <= 0.315009f) {
-            return 0;
-          } else {
-            return 4;
-          }
-        }
+        return 0;
       }
-    }
-  } else {
-    if (features[36] <= -0.377099f) {
-      return 0;
     } else {
       return 0;
     }
+  }
+} else {
+  if (features[4] <= -0.547013f) {
+    if (features[52] <= -0.352656f) {
+      return 4;
+    } else {
+      if (features[19] <= 0.902453f) {
+        if (features[65] <= -0.352913f) {
+          if (features[42] <= -0.426100f) {
+            return 4;
+          } else {
+            return 2;
+          }
+        } else {
+          if (features[44] <= 0.628782f) {
+            return 4;
+          } else {
+            return 2;
+          }
+        }
+      } else {
+        return 0;
+      }
+    }
+  } else {
+    return 2;
   }
 }
 }
 
 int tree_2(float features[]) {
-if (features[6] <= -0.668010f) {
-  if (features[69] <= -0.310184f) {
-    if (features[93] <= -0.385861f) {
-      return 0;
-    } else {
-      return 4;
-    }
-  } else {
-    if (features[69] <= -0.316297f) {
-      if (features[88] <= -0.963740f) {
-        if (features[10] <= -0.339724f) {
-          if (features[0] <= -0.969962f) {
-            if (features[21] <= 0.196460f) {
-              return 4;
+if (features[6] <= -0.468199f) {
+  if (features[27] <= -0.453190f) {
+    if (features[24] <= -0.295961f) {
+      if (features[16] <= 0.651910f) {
+        return 2;
+      } else {
+        if (features[63] <= -0.054637f) {
+          if (features[39] <= -0.401280f) {
+            if (features[87] <= 0.159174f) {
+              return 0;
             } else {
               return 2;
             }
           } else {
-            if (features[2] <= 0.468488f) {
-              if (features[20] <= 0.474655f) {
-                if (features[13] <= -0.184366f) {
+            if (features[1] <= -0.615824f) {
+              if (features[22] <= -0.386014f) {
+                if (features[45] <= -0.396683f) {
                   return 0;  // Safety check: Index out of bounds
                 } else {
                   return 0;  // Safety check: Index out of bounds
                 }
               } else {
-                return 4;
+                return 2;
               }
             } else {
-              if (features[51] <= -0.785470f) {
-                if (features[59] <= -0.739574f) {
+              return 2;
+            }
+          }
+        } else {
+          if (features[27] <= -0.415847f) {
+            return 4;
+          } else {
+            if (features[10] <= 0.084504f) {
+              if (features[6] <= 0.682660f) {
+                if (features[80] <= -0.623989f) {
+                  return 0;  // Safety check: Index out of bounds
+                } else {
+                  return 0;  // Safety check: Index out of bounds
+                }
+              } else {
+                if (features[42] <= -0.533407f) {
+                  return 0;  // Safety check: Index out of bounds
+                } else {
+                  return 0;  // Safety check: Index out of bounds
+                }
+              }
+            } else {
+              if (features[78] <= -0.157178f) {
+                if (features[34] <= -0.643318f) {
                   return 0;  // Safety check: Index out of bounds
                 } else {
                   return 0;  // Safety check: Index out of bounds
@@ -342,74 +307,68 @@ if (features[6] <= -0.668010f) {
               }
             }
           }
-        } else {
-          return 4;
-        }
-      } else {
-        if (features[13] <= -0.250247f) {
-          if (features[91] <= -0.346015f) {
-            if (features[81] <= -0.835718f) {
-              return 4;
-            } else {
-              return 5;
-            }
-          } else {
-            if (features[31] <= -1.089468f) {
-              return 4;
-            } else {
-              if (features[88] <= -0.429785f) {
-                if (features[0] <= 0.561558f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              } else {
-                if (features[85] <= -1.176969f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              }
-            }
-          }
-        } else {
-          if (features[37] <= -0.262431f) {
-            return 5;
-          } else {
-            if (features[16] <= 0.237468f) {
-              if (features[78] <= -1.008915f) {
-                return 4;
-              } else {
-                if (features[35] <= 1.720182f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              }
-            } else {
-              return 4;
-            }
-          }
         }
       }
-    } else {
-      if (features[58] <= -0.486841f) {
-        return 5;
-      } else {
-        return 4;
-      }
-    }
-  }
-} else {
-  if (features[84] <= 0.252330f) {
-    if (features[37] <= -0.430849f) {
-      return 5;
     } else {
       return 0;
     }
   } else {
-    if (features[16] <= 0.611376f) {
-      return 0;
+    return 4;
+  }
+} else {
+  if (features[84] <= 0.139037f) {
+    if (features[62] <= -0.223026f) {
+      return 2;
+    } else {
+      if (features[2] <= -0.018686f) {
+        if (features[76] <= -1.176707f) {
+          return 4;
+        } else {
+          return 2;
+        }
+      } else {
+        if (features[47] <= 0.047828f) {
+          if (features[76] <= -1.028933f) {
+            if (features[66] <= -0.228448f) {
+              return 1;
+            } else {
+              if (features[90] <= -0.447751f) {
+                return 0;  // Safety check: Index out of bounds
+              } else {
+                return 0;  // Safety check: Index out of bounds
+              }
+            }
+          } else {
+            return 4;
+          }
+        } else {
+          if (features[33] <= 0.729988f) {
+            return 0;
+          } else {
+            if (features[27] <= -0.627478f) {
+              if (features[69] <= -0.304752f) {
+                return 0;  // Safety check: Index out of bounds
+              } else {
+                return 0;  // Safety check: Index out of bounds
+              }
+            } else {
+              return 4;
+            }
+          }
+        }
+      }
+    }
+  } else {
+    if (features[23] <= -0.202348f) {
+      if (features[58] <= -0.529606f) {
+        if (features[88] <= -0.202515f) {
+          return 2;
+        } else {
+          return 0;
+        }
+      } else {
+        return 0;
+      }
     } else {
       return 4;
     }
@@ -418,39 +377,171 @@ if (features[6] <= -0.668010f) {
 }
 
 int tree_3(float features[]) {
-if (features[1] <= -0.017257f) {
-  if (features[14] <= 0.569034f) {
-    if (features[48] <= -0.128763f) {
-      if (features[2] <= 0.456484f) {
-        return 4;
-      } else {
-        return 5;
-      }
+if (features[1] <= -0.294208f) {
+  if (features[14] <= 0.311884f) {
+    if (features[8] <= -0.819151f) {
+      return 2;
     } else {
-      if (features[57] <= -0.329482f) {
-        if (features[76] <= 1.019405f) {
-          if (features[53] <= -0.335452f) {
-            return 5;
-          } else {
-            return 4;
-          }
-        } else {
-          if (features[33] <= -1.233058f) {
-            if (features[85] <= -0.616499f) {
-              return 1;
-            } else {
-              return 4;
-            }
-          } else {
-            if (features[30] <= -0.134196f) {
-              if (features[21] <= 0.207515f) {
-                if (features[4] <= -0.345969f) {
+      if (features[23] <= 0.672221f) {
+        if (features[79] <= -0.561146f) {
+          if (features[53] <= -0.376907f) {
+            if (features[21] <= -0.443682f) {
+              if (features[77] <= -1.207285f) {
+                if (features[57] <= -0.242792f) {
                   return 0;  // Safety check: Index out of bounds
                 } else {
                   return 0;  // Safety check: Index out of bounds
                 }
               } else {
-                if (features[33] <= -0.042439f) {
+                if (features[7] <= -0.606103f) {
+                  return 0;  // Safety check: Index out of bounds
+                } else {
+                  return 0;  // Safety check: Index out of bounds
+                }
+              }
+            } else {
+              if (features[9] <= -0.565356f) {
+                return 1;
+              } else {
+                if (features[48] <= -0.454617f) {
+                  return 0;  // Safety check: Index out of bounds
+                } else {
+                  return 0;  // Safety check: Index out of bounds
+                }
+              }
+            }
+          } else {
+            return 1;
+          }
+        } else {
+          if (features[33] <= -1.167429f) {
+            return 1;
+          } else {
+            if (features[45] <= -0.230467f) {
+              return 0;
+            } else {
+              return 0;
+            }
+          }
+        }
+      } else {
+        return 1;
+      }
+    }
+  } else {
+    if (features[80] <= -0.953636f) {
+      return 4;
+    } else {
+      return 2;
+    }
+  }
+} else {
+  if (features[39] <= 0.222560f) {
+    if (features[73] <= -0.274839f) {
+      if (features[38] <= 1.331768f) {
+        if (features[32] <= -0.338498f) {
+          return 4;
+        } else {
+          if (features[50] <= -0.314809f) {
+            if (features[47] <= -0.364351f) {
+              return 4;
+            } else {
+              return 0;
+            }
+          } else {
+            if (features[86] <= 0.048264f) {
+              return 2;
+            } else {
+              if (features[61] <= -0.199014f) {
+                return 0;  // Safety check: Index out of bounds
+              } else {
+                return 0;  // Safety check: Index out of bounds
+              }
+            }
+          }
+        }
+      } else {
+        if (features[7] <= -0.174082f) {
+          if (features[25] <= -0.609396f) {
+            if (features[89] <= -0.943326f) {
+              return 0;
+            } else {
+              return 4;
+            }
+          } else {
+            if (features[48] <= -0.123801f) {
+              if (features[5] <= -0.177469f) {
+                return 0;  // Safety check: Index out of bounds
+              } else {
+                return 0;  // Safety check: Index out of bounds
+              }
+            } else {
+              if (features[53] <= -0.282784f) {
+                return 0;  // Safety check: Index out of bounds
+              } else {
+                return 0;  // Safety check: Index out of bounds
+              }
+            }
+          }
+        } else {
+          return 1;
+        }
+      }
+    } else {
+      if (features[52] <= 0.749916f) {
+        if (features[3] <= -0.398608f) {
+          return 4;
+        } else {
+          if (features[37] <= -0.157182f) {
+            return 0;
+          } else {
+            return 1;
+          }
+        }
+      } else {
+        if (features[56] <= -0.807548f) {
+          return 4;
+        } else {
+          return 0;
+        }
+      }
+    }
+  } else {
+    if (features[51] <= 2.310232f) {
+      return 1;
+    } else {
+      return 4;
+    }
+  }
+}
+}
+
+int tree_4(float features[]) {
+if (features[32] <= -0.348183f) {
+  if (features[3] <= -0.594547f) {
+    if (features[13] <= -0.519473f) {
+      if (features[53] <= -0.335993f) {
+        return 4;
+      } else {
+        if (features[61] <= -0.310613f) {
+          if (features[9] <= -0.418337f) {
+            return 0;
+          } else {
+            return 4;
+          }
+        } else {
+          if (features[39] <= -0.409287f) {
+            return 4;
+          } else {
+            if (features[47] <= -0.332508f) {
+              if (features[92] <= -0.023377f) {
+                if (features[13] <= 0.410659f) {
+                  return 0;  // Safety check: Index out of bounds
+                } else {
+                  return 0;  // Safety check: Index out of bounds
+                }
+              } else {
+                if (features[81] <= 0.689207f) {
                   return 0;  // Safety check: Index out of bounds
                 } else {
                   return 0;  // Safety check: Index out of bounds
@@ -461,129 +552,57 @@ if (features[1] <= -0.017257f) {
             }
           }
         }
-      } else {
-        return 5;
       }
-    }
-  } else {
-    if (features[11] <= -0.475098f) {
-      if (features[68] <= -0.172883f) {
+    } else {
+      if (features[24] <= -0.441602f) {
+        if (features[46] <= -0.577190f) {
+          return 4;
+        } else {
+          return 0;
+        }
+      } else {
         return 0;
+      }
+    }
+  } else {
+    if (features[36] <= -0.571101f) {
+      return 4;
+    } else {
+      if (features[85] <= 0.529463f) {
+        if (features[47] <= -0.353007f) {
+          return 0;
+        } else {
+          return 4;
+        }
       } else {
-        if (features[16] <= -0.678849f) {
-          if (features[64] <= 0.168564f) {
-            return 2;
+        if (features[24] <= -0.184214f) {
+          if (features[22] <= -0.498407f) {
+            return 0;
           } else {
             return 4;
           }
         } else {
-          return 5;
-        }
-      }
-    } else {
-      return 2;
-    }
-  }
-} else {
-  if (features[39] <= 0.280460f) {
-    if (features[2] <= 0.691349f) {
-      return 1;
-    } else {
-      return 5;
-    }
-  } else {
-    if (features[55] <= -0.249913f) {
-      if (features[5] <= 0.495993f) {
-        return 5;
-      } else {
-        if (features[33] <= -0.965892f) {
-          return 2;
-        } else {
           return 0;
         }
       }
-    } else {
-      if (features[44] <= -0.007642f) {
-        if (features[2] <= 0.209309f) {
-          if (features[43] <= -0.077447f) {
-            return 4;
-          } else {
-            return 3;
-          }
-        } else {
-          if (features[84] <= 0.742355f) {
-            if (features[20] <= -0.452880f) {
-              if (features[91] <= -0.368538f) {
-                if (features[40] <= 0.578357f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              } else {
-                return 3;
-              }
-            } else {
-              if (features[30] <= 0.698059f) {
-                if (features[29] <= 1.198761f) {
-                  return 0;  // Safety check: Index out of bounds
-                } else {
-                  return 0;  // Safety check: Index out of bounds
-                }
-              } else {
-                return 3;
-              }
-            }
-          } else {
-            return 1;
-          }
-        }
-      } else {
-        return 2;
-      }
     }
-  }
-}
-}
-
-int tree_4(float features[]) {
-if (features[6] <= -0.701096f) {
-  if (features[91] <= -0.299964f) {
-    if (features[21] <= 0.213395f) {
-      return 5;
-    } else {
-      if (features[19] <= 0.702612f) {
-        return 2;
-      } else {
-        if (features[89] <= -0.942667f) {
-          return 0;
-        } else {
-          return 2;
-        }
-      }
-    }
-  } else {
-    return 0;
   }
 } else {
-  if (features[3] <= -0.765808f) {
-    if (features[36] <= -0.399061f) {
-      if (features[67] <= -0.075524f) {
-        return 2;
-      } else {
-        return 2;
-      }
-    } else {
+  if (features[3] <= -0.644678f) {
+    return 1;
+  } else {
+    if (features[47] <= -0.302637f) {
       return 0;
+    } else {
+      return 4;
     }
-  } else {
-    return 4;
   }
 }
 }
 
 
 int detect_activity(float features[]) {
-  int votes[6] = {0};
+  int votes[5] = {0};
   int n_trees = 5;
   int i, max_votes = 0, predicted_class = 0;
   
@@ -595,7 +614,7 @@ int detect_activity(float features[]) {
   votes[tree_4(features)]++;
   
   // Find class with most votes
-  for (i = 0; i < 6; i++) {
+  for (i = 0; i < 5; i++) {
     if (votes[i] > max_votes) {
       max_votes = votes[i];
       predicted_class = i;
